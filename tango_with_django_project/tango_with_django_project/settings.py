@@ -70,7 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media'  # 添加媒体文件上下文处理器
+                'django.template.context_processors.media',  # 添加媒体文件上下文处理器
             ],
         },
     },
@@ -128,5 +128,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = MEDIA_DIR
-MEDIA_URL = '/media/'
+MEDIA_ROOT = MEDIA_DIR  # 告诉django去哪里寻找已经上传或存储了的媒体文件
+MEDIA_URL = '/media/'  # 提供媒体文件服务的url
