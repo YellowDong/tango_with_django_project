@@ -5,4 +5,5 @@ app_name = 'rango'
 urlpatterns = [
     url("^$", views.index, name='index'),
     url("^about/", views.about, name='about'),
+    url("^category/(?P<category_name_url>[\w\-]+)/$", views.show_category, name='category')
 ]
