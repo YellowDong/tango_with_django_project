@@ -21,10 +21,14 @@ from django.conf.urls.static import static
 
 from django.conf.urls import include
 from Rango import views
+from login import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^rango/', include('Rango.urls')),
+    url(r'^user/', include('login.urls')),
+    url(r'^captcha/', include('captcha.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # 下面步骤是用于开发环境，在生产环境的话应该用别的方法（目前还没看到）

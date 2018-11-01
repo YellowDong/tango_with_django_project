@@ -3,6 +3,8 @@ from django.template.defaultfilters import slugify
 
 
 class Category(models.Model):
+    """字段名不能有两个下划线如：name__first等 因为两个下划线是Django的查询语法;
+    使用Django的ImageField需要提前安装pillow模块，pip install pillow即可"""
     name = models.CharField(max_length=128, unique=True)
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)

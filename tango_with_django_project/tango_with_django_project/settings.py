@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Rango',
+    'test1',
+    'login',
+    'captcha',
 ]
 
 MIDDLEWARE = [

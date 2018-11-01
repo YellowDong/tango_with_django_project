@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from Rango.models import Category, Page
+from django.utils.html import escape
 
 # admin.site.register(Category)
 # admin.site.register(Page)
@@ -8,7 +9,10 @@ from Rango.models import Category, Page
 
 class PageAdmin(admin.ModelAdmin):
     # fields = ['title', 'category', 'url']
-    list_display = ['title', 'category', 'url']
+    list_display = ('title', 'category', 'url')
+    fieldsets = (('hello', {'fields': ('url',), 'description': escape('hello world')}), ('world', {'fields': ('category', 'url'), 'classes': ('collapse',), 'description': 'hi i am xiao yun liu'}),) #  escape负责转义
+    # fields = ('url', 'title', 'category')
+    empty_value_display = '__empty__'
 
 
 class CategoryAdmin(admin.ModelAdmin):
