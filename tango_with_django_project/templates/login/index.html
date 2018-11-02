@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
-</head>
-<body>
-<h1>index</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}index{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+    <h1>hello {{ request.session.user_name }}! welcome back!</h1>
+    {% else %}
+    <h1>you no login ,please visit public content!</h1>
+    {% endif %}
+{% endblock %}

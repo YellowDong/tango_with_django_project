@@ -32,7 +32,7 @@ SECRET_KEY = '&5ebvf4wk*mrbwks*u8jabxj#0=!t+ah8khe@1h#&g@^_09$$4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -133,3 +133,14 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = MEDIA_DIR  # 告诉django去哪里寻找已经上传或存储了的媒体文件
 MEDIA_URL = '/media/'  # 提供媒体文件服务的url
+
+
+# ##send email settings
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'XXXXX@qq.com'  # 发送邮件的邮箱
+EMAIL_HOST_PASSWORD = 'lfgofpeypmzwbddeXX'  # 一定要开通POP3/SMTP服务并生成一个授权码
+
+CONFIRM_DAYS = 7  # 邮箱确认有效期限为7天
